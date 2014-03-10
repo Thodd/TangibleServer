@@ -1,0 +1,10 @@
+body {
+	margin: 0;
+	overflow: hidden;
+}
+
+.tagDiv {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+}
