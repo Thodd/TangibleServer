@@ -1,0 +1,40 @@
+﻿<Window x:Class="TangibleServer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:s="http://schemas.microsoft.com/surface/2008"
+        Title="Tags2JS" Height="371" Width="525"
+        WindowStyle="None"
+        ResizeMode="CanMinimize"
+        Loaded="Window_Loaded"
+        Closed="Window_Closed"
+        BorderBrush="Black"
+        Background="#FF424242"
+        BorderThickness="1">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="54"></RowDefinition>
+            <RowDefinition Height="24"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <!-- First row -->
+        <Polygon Grid.Row="0" Points="0,0, 0,30, 15,15, 0,0" Fill="#FF5B5B5B" Stroke="Transparent" Margin="0,15,0,0"></Polygon>
+        <TextBlock Grid.Row="0" Foreground="White" FontFamily="Segoe UI Light" FontSize="42" TextAlignment="Left" VerticalAlignment="Bottom" Padding="15,0,0,0" Margin="0,-2,109,0"
+                   MouseDown="Window_MouseDown"
+                   TouchDown="Window_TouchDown">Tags2JS</TextBlock>
+        <Canvas Background="#FF5B5B5B" Width="40" Height="35" Grid.Row="0" Margin="378,-1,15,24" MouseEnter="WindowButtons_MouseEnter" MouseLeave="WindowButtons_MouseLeave" MouseUp="Minimize_MouseDown">
+            <Rectangle Width="40" Height="35" Stroke="Black"></Rectangle>
+            <TextBlock FontSize="24" FontFamily="Segoe UI Light" Foreground="White" Canvas.Left="15" Canvas.Top="-2">_</TextBlock>
+        </Canvas>
+        <Canvas Background="#FF5B5B5B" Width="40" Height="35" Grid.Row="0" Margin="473,-1,15,24" MouseEnter="WindowButtons_MouseEnter" MouseLeave="WindowButtons_MouseLeave" MouseUp="Close_MouseDown">
+            <Rectangle Width="40" Height="35" Stroke="Black"></Rectangle>
+            <TextBlock FontSize="24" FontFamily="Segoe UI Light" Foreground="White" Canvas.Left="15" Canvas.Top="-2">x</TextBlock>
+        </Canvas>
+        
+        <!-- second row -->
+        <TextBlock Grid.Row="1" Foreground="#99FFFFFF" FontFamily="Segoe UI Light" FontSize="16" TextAlignment="Left" VerticalAlignment="Top" Padding="18,0,0,0" Margin="0,-4,0,0">A simple Pixelsense(SUR40)-Tag to JS-WebSocket Bridge.</TextBlock>
+        
+        <!-- third row -->
+        <RichTextBox Grid.Row="2" Name="LogMessages" Background="Transparent" Foreground="#DDDDDD" FontFamily="Segoe UI Mono" FontSize="12" BorderBrush="Black" BorderThickness="0" Margin="15,10,10,10"
+                     IsReadOnly="True"/>
+    </Grid>
+</Window>
